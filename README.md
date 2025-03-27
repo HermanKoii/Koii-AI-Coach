@@ -1,68 +1,124 @@
-# Koii Task Template
+# Project Starter Template: Task Automation & AI Workflow
 
-## Development Guide
+## Project Overview
 
-First time writing a task? Start with the [Development Guide](https://github.com/koii-network/ezsandbox).
+This project is a comprehensive starter template for building advanced task automation and AI-driven workflows, with built-in support for:
+- Cross-platform task management
+- Local AI model integration (via Ollama)
+- File processing and utility functions
+- Robust testing and configuration frameworks
 
-## Task Flow
+### Key Features
+- 🚀 Flexible task pipeline architecture
+- 🤖 Ollama AI model integration
+- 💻 Cross-platform support (Windows/Linux)
+- 🧪 Comprehensive testing suite
+- 📦 Docker and containerization support
+- 🔒 Environment configuration management
 
-Tasks operate within a periodic structure known as 'rounds'. Each round consists of the following steps:
+## Getting Started
 
-1. **Perform the Task:** Execute the necessary actions for the round.
-2. **Audit Work:** Review the work completed by other nodes.
-3. **Rewards and Penalties:** Distribute rewards and apply penalties as necessary.
+### Prerequisites
+- Node.js (v16+ recommended)
+- Docker (optional, for containerized deployment)
+- Ollama installed locally
 
-For more detailed information about the task flow, refer to [the runtime flow documentation](https://docs.koii.network/concepts/what-are-tasks/what-are-tasks/gradual-consensus).
+### Installation
 
-Looking to bring better structure to your task? Explore our [Task Organizer](https://www.figma.com/community/file/1220194939977550205/Task-Outline) for better organization.
-
-## Tips
-
-- Always ensure your secret files, such as `.env` files, are secure! Implement a robust `.gitignore` strategy.
-- Continue innovating with Koii!
-
-Should you encounter any issues, don't hesitate to reach out by opening a ticket on [Discord](https://discord.gg/koii-network).
-
-## Environment Requirements
-
-- [Node >=16.0.0](https://nodejs.org)
-- [Docker Compose](https://docs.docker.com/get-started/08_using_compose/)
-
-## Tool Requirements
-
-- [Koii CLI Suite](https://docs.koii.network/develop/command-line-tool/koii-cli/install-cli)
-- [Create Task CLI](https://docs.koii.network/develop/command-line-tool/create-task-cli/install)
-
-## Available Scripts
-
-```sh
-npm test
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/project-template.git
+cd project-template
 ```
 
-Simulate rounds using unitTest.js.
-
-```sh
-npm jest-test
+2. Install dependencies:
+```bash
+npm install
 ```
 
-Runs tests using Just.
-
-```sh
-npm run webpack
+3. Copy and configure environment files:
+```bash
+cp .env.developer.example .env
+# Edit .env with your specific configurations
 ```
 
-Builds the project and generates the main script: `dist/main.js`.
-
-```sh
-npm run prod-debug
+4. Run the application:
+```bash
+npm start
 ```
 
-Runs the live debugger (must have the task running in the desktop node).
+### Running Tests
+```bash
+npm test  # Runs the full test suite
+npm run test:debug  # For detailed debugging
+```
 
-## Runtime Options
+## Customization Guide
 
-There are two ways to run your task during development:
+### Key Customization Points
+- `src/task/`: Modify task-specific logic
+- `tests/`: Extend or modify test cases
+- `.env` files: Configure environment-specific settings
+- `config-task.yml`: Adjust global task configurations
 
-1. With `GLOBAL_TIMERS="true"` (refer to `.env.local.example`) - When this option is enabled, IPC calls are made by calculating the average time slots of all tasks running on your node.
+### Renaming/Rebranding
+1. Update `package.json`
+2. Modify project references in configuration files
+3. Update environment variable prefixes if needed
 
-2. With `GLOBAL_TIMERS="false"` - This option allows for manual calls to K2 and disables the automatic triggers for round management on K2. Transactions are only accepted during the correct time period. Instructions for manual calls can be found in [Manual K2 Calls](./Manual%20K2%20Calls.md).
+## Project Structure
+
+```
+project-root/
+├── src/
+│   ├── task/           # Core task processing logic
+│   └── utils/          # Utility functions
+├── tests/              # Comprehensive test suite
+├── config/             # Configuration files
+├── .env.*              # Environment configurations
+└── docker-compose.yaml # Containerization setup
+```
+
+## Technologies Used
+
+- **Core**
+  - Node.js
+  - JavaScript/ES6+
+  - Webpack
+
+- **AI & Processing**
+  - Ollama
+  - WASM for performance-critical tasks
+
+- **Development Tools**
+  - ESLint
+  - Prettier
+  - Jest
+  - Babel
+  - Nodemon
+
+## Use Cases
+
+This template is ideal for:
+- AI-driven task automation
+- Cross-platform system utilities
+- Machine learning workflow management
+- Distributed computing projects
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Your Name - [your.email@example.com](mailto:your.email@example.com)
+
+Project Link: [https://github.com/yourusername/project-template](https://github.com/yourusername/project-template)
